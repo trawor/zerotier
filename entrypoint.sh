@@ -17,7 +17,7 @@ if [ -n "$NW_ID" ]; then
         echo "Found ENV: NW_TOKEN, will auto auth myself ..."
         MYURL=https://my.zerotier.com/api/network/${NW_ID}/member/$MYID
         wget --header "Authorization: Bearer ${NW_TOKEN}" "${MYURL}" -q -O /tmp/ztinfo.txt
-        sed \'s/"authorized":false/"authorized":true/\' /tmp/ztinfo.txt > /tmp/ztright.txt
+        sed 's/"authorized":false/"authorized":true/' /tmp/ztinfo.txt > /tmp/ztright.txt
         wget --header "Authorization: Bearer ${NW_TOKEN}" --post-data="$(cat /tmp/ztright.txt)" -q -O- "${MYURL}"
         rm /tmp/ztinfo.txt && rm /tmp/ztright.txt
       fi
