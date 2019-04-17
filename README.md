@@ -13,15 +13,14 @@ So, with this, you can scale up your docker and even any machine cluster program
 
 ## Usage, simple
 
-- Run as a ZT client only
+- Run as a ZT client only  
 `docker run -d --device=/dev/net/tun --net=host --cap-add=NET_ADMIN --cap-add=SYS_ADMIN 
   -v /var/lib/zerotier-one:/var/lib/zerotier-one trawor/zerotier`
 
-ps: if you don't like to buzz the docker host, remove `--net=host`
+ps: if you don't like to buzz the docker host, remove `--net=host`  
 pps: mount `/var/lib/zerotier-one` to keep the data or you will have always a new join
 
-- Run with ENV (with -e param)
-
+- Run with ENV (with -e param)  
   1. `NW_ID` : the network id you created, listed https://my.zerotier.com/network
   2. `NW_TOKEN` : 'API Access Tokens' in https://my.zerotier.com
   3. `IFTTT` : IFTTT trigger URL, looks like: `https://maker.ifttt.com/trigger/xxxxxxxxxx/with/key/ST-xxxxxxxxxxxxx`
