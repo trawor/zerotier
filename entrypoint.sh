@@ -27,6 +27,6 @@ if [ -n "$NW_ID" ]; then
     MYIP=$(zerotier-cli listnetworks | grep $NW_ID |grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' )
     echo "Success! IP: ${MYIP}"
 
-    if [ -n "$IFTTT" ]; then wget --header "Content-Type: application/json" --post-data="{\\"value1\\":\\"${MYID}\\",\\"value2\\":\\"${MYIP}\\"}" -q -O- "${IFTTT}";fi
+    if [ -n "$IFTTT" ]; then wget --header "Content-Type: application/json" --post-data="{\"value1\":\"${MYID}\",\"value2\":\"${MYIP}\"}" -q -O- "${IFTTT}";fi
 fi
 exec "$@"

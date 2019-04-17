@@ -1,8 +1,10 @@
 # zerotier
 Join zerotier network auto with Docker, I like ZT so much!
 
-This is a very tiny(3~ MB) docker image to join zerotier without auth on web.
+This is a very tiny(3 MB) docker image to join zerotier without auth on web.
 So, with this, you can scale up your docker and even any machine cluster programmly.
+
+Find detail here: https://hub.docker.com/r/trawor/zerotier
 
 ## Process
 1. Alpine install zerotier
